@@ -129,7 +129,7 @@ export default function HomePage() {
               Sign In
             </Link>
             <p className="text-center text-[#666666]">
-              Don't have an account?{" "}
+              Dont have an account?{" "}
               <Link href="/signup" className="text-[#171717] hover:underline">
                 Sign Up
               </Link>
