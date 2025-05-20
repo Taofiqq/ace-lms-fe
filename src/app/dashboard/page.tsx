@@ -492,7 +492,7 @@ export default function DashboardPage() {
               <>
                 <li>
                   <Link
-                    href="/admin/users"
+                    href="/users"
                     className="block py-2 px-4 rounded text-[#A1A1A1] hover:bg-gray-100"
                   >
                     Users
@@ -500,7 +500,7 @@ export default function DashboardPage() {
                 </li>
                 <li>
                   <Link
-                    href="/admin/courses"
+                    href="/courses"
                     className="block py-2 px-4 rounded text-[#A1A1A1] hover:bg-gray-100"
                   >
                     Courses
