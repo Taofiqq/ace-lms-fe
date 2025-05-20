@@ -2,9 +2,18 @@
 "use client";
 
 import { useAuthStore } from "@/store/authStore";
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 export default function DashboardPage() {
-  const { user } = useAuthStore();
+  const { user, clearAuth } = useAuthStore();
+  const router = useRouter();
+
+  const handleLogout = () => {
+    clearAuth(); // Clear zustand store
+    Cookies.remove("token"); // Remove token cookie
+    router.push("/login"); // Redirect to login
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#FAFAFA]">
@@ -15,7 +24,13 @@ export default function DashboardPage() {
         <p className="text-[#666666] mb-4">
           Hello, {user?.email || "User"} ({user?.role || "Unknown"})!
         </p>
-        <p className="text-[#666666]">This is your dashboard.</p>
+        <p className="text-[#666666] mb-6">This is your dashboard.</p>
+        <button
+          onClick={handleLogout}
+          className="w-full bg-[#171717] text-[#FFFFFF] py-2 rounded hover:bg-[#555555] transition-colors"
+        >
+          Log Out
+        </button>
       </div>
     </div>
   );
