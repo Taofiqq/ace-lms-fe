@@ -602,7 +602,7 @@ export default function DashboardPage() {
                 </li>
                 <li>
                   <Link
-                    href="/instructor/gamification"
+                    href="gamification"
                     className="block py-2 px-4 rounded text-[#A1A1A1] hover:bg-gray-100"
                   >
                     Gamification
